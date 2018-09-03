@@ -5,6 +5,8 @@ import Home from './components/home.vue'
 import {Global} from './global.js';
 import Info from './components/info.vue'
 import User from './components/user.vue'
+import Friends from './components/friend.vue'
+
 export const routes = [{
         path: '',
         component: Start,
@@ -34,11 +36,11 @@ export const routes = [{
                 path: 'edit',
                 name: 'edit'
             },
-            // {
-            //     path: 'friends',
-            //     name: 'friends',
-            //     component: Friends
-            // },
+            {
+                path: 'friends',
+                name: 'friends',
+                component: Friends
+            },
             // {
             //     path: 'history',
             //     name: 'history',

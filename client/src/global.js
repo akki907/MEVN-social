@@ -20,6 +20,12 @@ export const Global = new Vue({
              this.userId = this.user._id;
             //  cb(this.user)
         },
+        logout(){
+            localStorage.removeItem('jwtToken');
+            this.user = {};
+            this.userId = "";
+            this.isLogedIn = false
+        },
         login(user){
             return this.$http.post(`${this.proxy}api/auth/login`, user);
         },
@@ -78,11 +84,11 @@ export const Global = new Vue({
         performSearch(string){
             return this.$http.get(`search/?string=${string}`, {headers: {'Authorization': `Bearer ${this.token}`}});
         },
-        logout(){
-            this.token = "";
-            this.userId = "";
-            this.user = {};
-        }
+        // logout(){
+        //     this.token = "";
+        //     this.userId = "";
+        //     this.user = {};
+        // }
     },
 
     computed: {
